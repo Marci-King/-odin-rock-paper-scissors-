@@ -25,3 +25,11 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice());
+
+function playRound(humanChoice, computerChoice) {
+  humanChoice = humanChoice.toLowerCase();
+  console.log("Human chose:", humanChoice);
+  console.log("Computer chose:", computerChoice);
+}
+
+playRound("ROCK", "scissors");
