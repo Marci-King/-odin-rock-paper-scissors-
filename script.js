@@ -30,6 +30,23 @@ function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
   console.log("Human chose:", humanChoice);
   console.log("Computer chose:", computerChoice);
+
+  if (humanChoice === computerChoice) {
+    return "Its a tie, play again";
+  } else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "scissors" && computerChoice === "paper") ||
+    (humanChoice === "paper" && computerChoice === "rock")
+  ) {
+    humanScore++;
+
+    return `You win! ${humanChoice} beats ${computerChoice}`;
+  } else {
+    computerScore++;
+    return `You lose! ${computerChoice} beats ${humanChoice}`;
+  }
 }
 
-playRound("ROCK", "scissors");
+console.log(playRound("paper", "rock"));
+
+console.log("Scores - Human:", humanScore, "Computer:", computerScore);
