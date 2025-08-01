@@ -50,3 +50,10 @@ function playRound(humanChoice, computerChoice) {
 console.log(playRound("paper", "rock"));
 
 console.log("Scores - Human:", humanScore, "Computer:", computerScore);
+
+function playRound(humanChoice, computerChoice) {}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
