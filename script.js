@@ -58,3 +58,8 @@ function playGame() {
 }
 
 playGame();
+
+//Practuce arrays
+
+let fruits = ["cake", "banana", "apple"];
+console.log(fruits[1]);
