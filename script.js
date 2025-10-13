@@ -1,3 +1,10 @@
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+const resultsDiv = document.querySelector("#results");
+const scoreDiv = document.querySelector("#score");
+const winnerDiv = document.querySelector("#winner");
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -13,48 +20,21 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  let userInput = prompt("Enter rock, paper, or scissors");
-  return userInput;
-}
-
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase();
-  console.log("Human chose:", humanChoice);
-  console.log("Computer chose:", computerChoice);
 
   if (humanChoice === computerChoice) {
-    return "Its a tie, play again";
+    resultsDiv.textContent = "Its a tie, play again";
   } else if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "scissors" && computerChoice === "paper") ||
     (humanChoice === "paper" && computerChoice === "rock")
   ) {
     humanScore++;
-    return `You win! ${humanChoice} beats ${computerChoice}`;
+    resultsDiv.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
   } else {
     computerScore++;
-    return `You lose! ${computerChoice} beats ${humanChoice}`;
+    resultsDiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
   }
+  scoreDiv.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
 }
-
-function playGame() {
-  for (let i = 0; i < 5; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(humanSelection, computerSelection));
-  }
-
-  console.log("Final scores:");
-  console.log("Human:", humanScore, "Computer:", computerScore);
-
-  if (humanScore > computerScore) {
-    console.log("You won the game");
-  } else if (computerScore > humanScore) {
-    console.log("You lost the game");
-  } else {
-    console.log("Its a tie");
-  }
-}
-
-playGame();
