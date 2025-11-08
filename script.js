@@ -37,6 +37,17 @@ function playRound(humanChoice, computerChoice) {
     resultsDiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
   }
   scoreDiv.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
+  if (humanScore === 5) {
+    winnerDiv.textContent = "You won the game!";
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+  } else if (computerScore === 5) {
+    winnerDiv.textContent = "Computer won the game!";
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+  }
 }
 
 rockButton.addEventListener("click", () => {
