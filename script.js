@@ -38,3 +38,18 @@ function playRound(humanChoice, computerChoice) {
   }
   scoreDiv.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
 }
+
+rockButton.addEventListener("click", () => {
+  const computerChoice = getComputerChoice();
+  playRound("rock", computerChoice);
+});
+
+paperButton.addEventListener("click", () => {
+  const computerChoice = getComputerChoice();
+  playRound("paper", computerChoice);
+});
+
+scissorsButton.addEventListener("click", () => {
+  const computerChoice = getComputerChoice();
+  playRound("scissors", computerChoice);
+});
